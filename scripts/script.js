@@ -2,6 +2,7 @@ const form = document.getElementById("form");
 const input = document.getElementById("input");
 const todosUL = document.getElementById("todos");
 
+//Pegando todos os ToDo no LocalStorage
 const todos = JSON.parse(localStorage.getItem("todos"));
 
 if (todos) {
@@ -22,7 +23,8 @@ function addTodo(todo) {
     if (todo) {
         todoText = todo.text;
     }
-
+    
+    //Verificando se há algum ToDo completed True
     if (todoText) {
         const todoEl = document.createElement("li");
         if (todo && todo.completed) {
